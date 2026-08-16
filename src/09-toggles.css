@@ -1,0 +1,215 @@
+/* ============================================================
+   STYLE SETTINGS TOGGLES
+   The full illuminated experience is the default and needs no
+   plugin. These classes let Style Settings simplify or adjust.
+   ============================================================ */
+
+/* -- hide drop caps -- */
+body.ill-hide-drop-caps .markdown-rendered .mod-header + .el-p > p::first-letter,
+body.ill-hide-drop-caps .markdown-rendered .el-h1 + .el-p > p::first-letter,
+body.ill-hide-drop-caps .markdown-rendered .el-h2 + .el-p > p::first-letter {
+	float: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	padding: 0;
+	margin: 0;
+	color: inherit;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+/* -- matte headings: no gilding (also used by performance mode) -- */
+body.ill-hide-gold .markdown-rendered h1,
+body.ill-hide-gold .markdown-source-view.mod-cm6 .cm-line .cm-header-1,
+body.ill-hide-gold .inline-title,
+body.ill-performance .markdown-rendered h1,
+body.ill-performance .markdown-source-view.mod-cm6 .cm-line .cm-header-1,
+body.ill-performance .inline-title {
+	background-image: none;
+	background-clip: border-box;
+	-webkit-text-fill-color: var(--ill-rubric);
+	filter: none;
+}
+
+body.ill-hide-gold .markdown-rendered .mod-header + .el-p > p::first-letter,
+body.ill-hide-gold .markdown-rendered .el-h1 + .el-p > p::first-letter,
+body.ill-hide-gold .markdown-rendered .el-h2 + .el-p > p::first-letter,
+body.ill-performance .markdown-rendered .mod-header + .el-p > p::first-letter,
+body.ill-performance .markdown-rendered .el-h1 + .el-p > p::first-letter,
+body.ill-performance .markdown-rendered .el-h2 + .el-p > p::first-letter {
+	padding: 0.02em 0.06em 0 0;
+	margin: 0.03em 0.1em 0 0;
+	color: var(--ill-versal-a);
+	background-image: none;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+/* -- hide borders, flourishes, manicules, frames -- */
+body.ill-hide-ornaments .markdown-rendered h1::after {
+	content: none;
+}
+
+body.ill-hide-ornaments .markdown-reading-view .markdown-preview-sizer::after,
+body.ill-hide-ornaments .markdown-source-view.mod-cm6 .cm-sizer::after {
+	content: none;
+}
+
+body.ill-hide-ornaments .markdown-rendered hr,
+body.ill-hide-ornaments .markdown-source-view.mod-cm6 hr {
+	height: auto;
+	background-color: transparent;
+	mask-image: none;
+	border-top: 3px double var(--ill-hairline);
+}
+
+body.ill-hide-ornaments .callout .callout-icon svg {
+	display: block;
+}
+
+body.ill-hide-ornaments .callout .callout-icon::after {
+	content: none;
+}
+
+body.ill-hide-ornaments .markdown-rendered .image-embed img {
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+/* -- uniform list markers -- */
+body.ill-hide-versals .markdown-rendered ul > li:nth-child(odd)::marker,
+body.ill-hide-versals .markdown-rendered ol > li:nth-child(odd)::marker,
+body.ill-hide-versals .markdown-rendered ul > li:nth-child(even)::marker,
+body.ill-hide-versals .markdown-rendered ol > li:nth-child(even)::marker {
+	color: var(--list-marker-color);
+}
+
+body.ill-hide-versals .markdown-rendered ol {
+	list-style-type: decimal;
+}
+
+/* -- plain blockquotes -- */
+body.ill-plain-quotes .markdown-rendered blockquote {
+	margin-inline: 0;
+	padding: 0 1em;
+	border-inline-start: var(--blockquote-border-thickness) solid var(--blockquote-border-color);
+	font-size: 1em;
+}
+
+/* -- plain tables -- */
+body.ill-plain-tables .markdown-rendered table {
+	border: 1px solid var(--ill-hairline);
+	outline: none;
+}
+
+body.ill-plain-tables .markdown-rendered th {
+	border-bottom: 2px solid var(--ill-hairline);
+	font-variant-caps: normal;
+	letter-spacing: normal;
+}
+
+body.ill-plain-tables .markdown-rendered th + th,
+body.ill-plain-tables .markdown-rendered td + td {
+	border-inline-start: none;
+}
+
+/* -- ragged margin: unjustified, unhyphenated folio -- */
+body.ill-ragged .markdown-rendered p {
+	text-align: start;
+	hyphens: manual;
+}
+
+/* -- strikethrough instead of expunction -- */
+body.ill-modern-tasks {
+	--checklist-done-decoration: line-through;
+}
+
+/* -- flat page: no desk, no leaf -- */
+body.ill-flat-page .workspace-leaf-content[data-type="markdown"] .view-content {
+	background-color: var(--ill-page);
+	background-image: none;
+}
+
+body.ill-flat-page .markdown-reading-view .markdown-preview-sizer,
+body.ill-flat-page .markdown-source-view.mod-cm6 .cm-sizer {
+	margin-block: 0;
+	border: none;
+	border-radius: 0;
+	background-image: none;
+	box-shadow: none;
+}
+
+/* -- standard interface chrome: parchment sidebars -- */
+body.theme-light.ill-plain-ui,
+body.theme-dark.ill-plain-ui {
+	--ill-desk: var(--ill-page-deep);
+	--ill-desk-raised: var(--ill-page);
+	--ill-desk-line: var(--ill-hairline-soft);
+	--ill-desk-text: var(--ill-ink-soft);
+	--icon-color: var(--ill-ink-soft);
+	--nav-item-background-hover: var(--ill-hover-wash);
+	--nav-item-background-active: var(--ill-active-wash);
+	--nav-item-background-selected: var(--ill-active-wash);
+	--nav-item-color-hover: var(--ill-ink);
+	--nav-item-color-active: var(--ill-ink);
+	--nav-item-color-selected: var(--ill-ink);
+	--nav-heading-color: var(--ill-rubric);
+	--vault-name-color: var(--ill-ink);
+}
+
+/* -- system interface font -- */
+body.ill-system-interface-font {
+	--font-interface-theme: -apple-system, "Segoe UI", roboto, "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+/* -- performance mode: drop the costly layers -- */
+body.ill-performance .workspace-leaf-content[data-type="markdown"] .view-content::after {
+	content: none;
+}
+
+body.ill-performance .markdown-reading-view .markdown-preview-sizer,
+body.ill-performance .markdown-source-view.mod-cm6 .cm-sizer {
+	background-image: none;
+	box-shadow: 0 2px 10px var(--ill-shadow-page);
+}
+
+body.ill-performance .markdown-reading-view .markdown-preview-sizer::after,
+body.ill-performance .markdown-source-view.mod-cm6 .cm-sizer::after {
+	content: none;
+}
+
+/* ============================================================
+   PRINT - plain ink on plain paper. The doubled classes keep
+   these declarations ahead of every manuscript variant.
+   ============================================================ */
+
+@media print {
+	body.theme-light.theme-light,
+	body.theme-dark.theme-dark {
+		--ill-page: #fff;
+		--ill-page-deep: #f3f0e8;
+		--ill-page-raised: #fff;
+		--ill-ink: #1e1a14;
+		--ill-ink-soft: #4a4238;
+		--ill-texture: 0%;
+		--ill-ruling: 0%;
+	}
+
+	.markdown-reading-view .markdown-preview-sizer {
+		margin: 0;
+		border: none;
+		box-shadow: none;
+		background-image: none;
+	}
+
+	.markdown-reading-view .markdown-preview-sizer::after {
+		content: none;
+	}
+}

@@ -1,0 +1,561 @@
+/* ============================================================
+   THE MANUSCRIPTS
+   Each variant re-inks the token slots. The base theme IS the
+   Book of Kells, so `illuminatio-kells` needs no rules - the
+   class is simply inert when Style Settings applies it.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   LINDISFARNE GOSPELS - Holy Island, c. 715-720
+   (British Library, Cotton MS Nero D.IV). Eadfrith's cool,
+   delicate insular palette: indigo, mauve-pink, sage, a very
+   sparing use of true gold.
+   ------------------------------------------------------------ */
+
+body.illuminatio-lindisfarne {
+	--ill-page: #f1e6cf;
+	--ill-page-deep: #e8d9b8;
+	--ill-page-raised: #f7efdf;
+	--ill-page-shade: #dbc9a2;
+	--ill-desk: #201d22;
+	--ill-desk-raised: #2c2830;
+	--ill-desk-line: #45404c;
+	--ill-desk-text: #aaa3b4;
+	--ill-ink: #38302a;
+	--ill-ink-soft: #5c5147;
+	--ill-ink-faint: #8b7d6e;
+	--ill-rubric: #a8442c;
+	--ill-versal-a: #a8442c;
+	--ill-versal-b: #48628c;
+	--ill-accent: #48628c;
+	--ill-link: #43608c;
+	--ill-link-ext: #8a5878;
+	--ill-error: #99301f;
+	--ill-warning: #93661a;
+	--ill-success: #5b6f42;
+	--ill-gold-hi: #f0d795;
+	--ill-gold-mid: #c9a03c;
+	--ill-gold-lo: #8c6a22;
+	--ill-gold-edge: #614a17;
+	--ill-highlight: rgb(176 98 122 / 20%);
+	--ill-selection: rgb(72 98 140 / 22%);
+	--ill-ruling-color: #6e5a3e;
+	--accent-h: 216;
+	--accent-s: 32%;
+	--accent-l: 42%;
+	--callout-quote: 138, 88, 120;
+}
+
+body.illuminatio-lindisfarne.theme-dark {
+	--ill-page: #1f1c19;
+	--ill-page-deep: #191613;
+	--ill-page-raised: #282420;
+	--ill-page-shade: #121009;
+	--ill-desk: #121014;
+	--ill-desk-raised: #1c1920;
+	--ill-desk-line: #383342;
+	--ill-desk-text: #948da2;
+	--ill-ink: #ded2b8;
+	--ill-ink-soft: #b0a186;
+	--ill-ink-faint: #7c705c;
+	--ill-rubric: #cf6a4d;
+	--ill-versal-a: #cf6a4d;
+	--ill-versal-b: #8ea8cd;
+	--ill-accent: #8ea8cd;
+	--ill-link: #93b0d6;
+	--ill-link-ext: #c398b4;
+	--ill-error: #cd5a48;
+	--ill-warning: #c79d48;
+	--ill-success: #93a873;
+	--ill-gold-hi: #f2dda0;
+	--ill-gold-mid: #d2a848;
+	--ill-gold-lo: #9c7a2c;
+	--ill-gold-edge: #2e2410;
+	--ill-highlight: rgb(195 152 180 / 18%);
+	--ill-selection: rgb(142 168 205 / 22%);
+	--ill-ruling-color: #b8a480;
+	--accent-h: 214;
+	--accent-s: 30%;
+	--accent-l: 62%;
+}
+
+/* ------------------------------------------------------------
+   WINCHESTER BIBLE - Winchester, c. 1160-1175. Romanesque
+   monumentality: bright white calfskin, burnished gold leaf,
+   lapis ultramarine bought at the price of empires. Display
+   lettering in monumental capitals rather than uncial.
+   ------------------------------------------------------------ */
+
+body.illuminatio-winchester {
+	--ill-page: #f3ecdc;
+	--ill-page-deep: #eadfc6;
+	--ill-page-raised: #f9f4ea;
+	--ill-page-shade: #dccfae;
+	--ill-desk: #23180f;
+	--ill-desk-raised: #312215;
+	--ill-desk-line: #4c3a22;
+	--ill-desk-text: #b5a078;
+	--ill-ink: #322a20;
+	--ill-ink-soft: #574a38;
+	--ill-ink-faint: #857459;
+	--ill-rubric: #ab3520;
+	--ill-versal-a: #ab3520;
+	--ill-versal-b: #27448c;
+	--ill-accent: #27448c;
+	--ill-link: #27448c;
+	--ill-link-ext: #8c2f3e;
+	--ill-error: #9c2b1a;
+	--ill-warning: #96660f;
+	--ill-success: #4c6b2f;
+	--ill-gold-hi: #f6dfa0;
+	--ill-gold-mid: #d4a437;
+	--ill-gold-lo: #93691c;
+	--ill-gold-edge: #5e430f;
+	--ill-highlight: rgb(212 164 55 / 26%);
+	--ill-selection: rgb(39 68 140 / 18%);
+	--ill-ruling-color: #7a6038;
+	--ill-font-display: "Illuminatio Junicode", "Junicode", serif;
+	--ill-font-dropcap: "Illuminatio Junicode", "Junicode", serif;
+	--ill-display-weight: 700;
+	--ill-display-variant: small-caps;
+	--ill-display-spacing: 0.06em;
+	--ill-border-svg: var(--ill-svg-fillet);
+	--accent-h: 224;
+	--accent-s: 57%;
+	--accent-l: 35%;
+}
+
+body.illuminatio-winchester.theme-dark {
+	--ill-page: #1b1811;
+	--ill-page-deep: #15120c;
+	--ill-page-raised: #241f16;
+	--ill-page-shade: #0f0c07;
+	--ill-desk: #0f0b07;
+	--ill-desk-raised: #1a140c;
+	--ill-desk-line: #3c2f1c;
+	--ill-desk-text: #a08d64;
+	--ill-ink: #e6dcc2;
+	--ill-ink-soft: #b6a684;
+	--ill-ink-faint: #7f7158;
+	--ill-rubric: #d05a3e;
+	--ill-versal-a: #d05a3e;
+	--ill-versal-b: #8aa4dd;
+	--ill-accent: #8aa4dd;
+	--ill-link: #90a9de;
+	--ill-link-ext: #cf8a9a;
+	--ill-error: #cd5a48;
+	--ill-warning: #c99b3c;
+	--ill-success: #8aa860;
+	--ill-gold-hi: #f7e2a6;
+	--ill-gold-mid: #d9ad46;
+	--ill-gold-lo: #a68026;
+	--ill-gold-edge: #302408;
+	--ill-highlight: rgb(217 173 70 / 20%);
+	--ill-selection: rgb(138 164 221 / 22%);
+	--ill-ruling-color: #c2ab7e;
+	--accent-h: 222;
+	--accent-s: 55%;
+	--accent-l: 70%;
+}
+
+/* ------------------------------------------------------------
+   TRES RICHES HEURES DU DUC DE BERRY - Limbourg brothers,
+   c. 1412-1416 (Musee Conde, Chantilly). International Gothic:
+   saturated ultramarine skies, rose madder, verdant fields,
+   gold everywhere. Textura quadrata display script; the dark
+   rendition is the deep blue of its night skies.
+   ------------------------------------------------------------ */
+
+body.illuminatio-riches {
+	--ill-page: #f0e7d3;
+	--ill-page-deep: #e7dabd;
+	--ill-page-raised: #f6efe1;
+	--ill-page-shade: #d9caa6;
+	--ill-desk: #191b2b;
+	--ill-desk-raised: #232637;
+	--ill-desk-line: #3c405c;
+	--ill-desk-text: #9aa0c0;
+	--ill-ink: #2e2a24;
+	--ill-ink-soft: #544d41;
+	--ill-ink-faint: #837863;
+	--ill-rubric: #a63448;
+	--ill-versal-a: #a63448;
+	--ill-versal-b: #27448c;
+	--ill-accent: #27448c;
+	--ill-link: #2a4a94;
+	--ill-link-ext: #46704a;
+	--ill-error: #9c2b2b;
+	--ill-warning: #96660f;
+	--ill-success: #46704a;
+	--ill-gold-hi: #f7e2a4;
+	--ill-gold-mid: #d7a83a;
+	--ill-gold-lo: #976d1d;
+	--ill-gold-edge: #614a12;
+	--ill-highlight: rgb(215 168 58 / 26%);
+	--ill-selection: rgb(42 74 148 / 16%);
+	--ill-ruling-color: #6e5f8a;
+	--ill-font-display: "Illuminatio Textura", serif;
+	--ill-font-dropcap: "Illuminatio Textura", serif;
+	--ill-display-weight: 500;
+	--ill-display-spacing: 0.015em;
+	--ill-border-svg: var(--ill-svg-ivy);
+	--h1-size: 2.05em;
+	--accent-h: 223;
+	--accent-s: 57%;
+	--accent-l: 36%;
+	--callout-quote: 166, 52, 72;
+}
+
+body.illuminatio-riches.theme-dark {
+	--ill-page: #191b26;
+	--ill-page-deep: #14151e;
+	--ill-page-raised: #212333;
+	--ill-page-shade: #0d0e16;
+	--ill-desk: #0e0f18;
+	--ill-desk-raised: #171926;
+	--ill-desk-line: #363a58;
+	--ill-desk-text: #939ac2;
+	--ill-ink: #dcd6c2;
+	--ill-ink-soft: #aaa38c;
+	--ill-ink-faint: #75705f;
+	--ill-rubric: #cb5a6e;
+	--ill-versal-a: #cb5a6e;
+	--ill-versal-b: #8aa3dd;
+	--ill-accent: #8aa3dd;
+	--ill-link: #92abe2;
+	--ill-link-ext: #8fbc8a;
+	--ill-error: #cd5a5a;
+	--ill-warning: #c99b3c;
+	--ill-success: #8fbc8a;
+	--ill-gold-hi: #f6e2a8;
+	--ill-gold-mid: #d8ac48;
+	--ill-gold-lo: #a37c26;
+	--ill-gold-edge: #2b2108;
+	--ill-highlight: rgb(216 172 72 / 20%);
+	--ill-selection: rgb(138 163 221 / 22%);
+	--ill-ruling-color: #9d94c2;
+	--accent-h: 222;
+	--accent-s: 55%;
+	--accent-l: 71%;
+}
+
+/* ------------------------------------------------------------
+   ELLESMERE CHAUCER - London, c. 1400-1405 (Huntington Library,
+   MS EL 26 C 9). The Canterbury Tales in anglicana formata:
+   warm English parchment, red and blue paraphs taking turns,
+   gold bar-borders sprouting ivy sprays.
+   ------------------------------------------------------------ */
+
+body.illuminatio-ellesmere {
+	--ill-page: #eee0bd;
+	--ill-page-deep: #e4d2a4;
+	--ill-page-raised: #f4e9d0;
+	--ill-page-shade: #d6c190;
+	--ill-desk: #26190e;
+	--ill-desk-raised: #342312;
+	--ill-desk-line: #503a1e;
+	--ill-desk-text: #b49c6e;
+	--ill-ink: #40331d;
+	--ill-ink-soft: #635231;
+	--ill-ink-faint: #8f7c54;
+	--ill-rubric: #ad3a26;
+	--ill-versal-a: #ad3a26;
+	--ill-versal-b: #35548c;
+	--ill-accent: #35548c;
+	--ill-link: #35548c;
+	--ill-link-ext: #7d5837;
+	--ill-error: #9c2f1c;
+	--ill-warning: #93611c;
+	--ill-success: #5d6b33;
+	--ill-gold-hi: #f2db97;
+	--ill-gold-mid: #c99c35;
+	--ill-gold-lo: #8f691e;
+	--ill-gold-edge: #5c4413;
+	--ill-highlight: rgb(201 156 53 / 28%);
+	--ill-selection: rgb(53 84 140 / 18%);
+	--ill-ruling-color: #7d5c2e;
+	--ill-font-display: "Illuminatio Bookhand", serif;
+	--ill-font-dropcap: "Illuminatio Bookhand", serif;
+	--ill-border-svg: var(--ill-svg-ivy);
+	--accent-h: 219;
+	--accent-s: 45%;
+	--accent-l: 38%;
+}
+
+body.illuminatio-ellesmere.theme-dark {
+	--ill-page: #221a0f;
+	--ill-page-deep: #1b140a;
+	--ill-page-raised: #2c2213;
+	--ill-page-shade: #140e06;
+	--ill-desk: #130d06;
+	--ill-desk-raised: #1e150a;
+	--ill-desk-line: #40301a;
+	--ill-desk-text: #a28d60;
+	--ill-ink: #e6d5ab;
+	--ill-ink-soft: #b89f70;
+	--ill-ink-faint: #82704e;
+	--ill-rubric: #d3653f;
+	--ill-versal-a: #d3653f;
+	--ill-versal-b: #86a0cf;
+	--ill-accent: #86a0cf;
+	--ill-link: #8ca7d6;
+	--ill-link-ext: #c99e6e;
+	--ill-error: #cd5a48;
+	--ill-warning: #c99b3c;
+	--ill-success: #93a35f;
+	--ill-gold-hi: #f4de9c;
+	--ill-gold-mid: #d3a743;
+	--ill-gold-lo: #9d7826;
+	--ill-gold-edge: #33260c;
+	--ill-highlight: rgb(211 167 67 / 20%);
+	--ill-selection: rgb(134 160 207 / 22%);
+	--ill-ruling-color: #c2a878;
+	--accent-h: 218;
+	--accent-s: 42%;
+	--accent-l: 67%;
+}
+
+/* ------------------------------------------------------------
+   CODEX AUREUS - the golden gospel books of the Carolingian
+   court (after Codex Aureus of St Emmeram, 870, and the
+   Stockholm Codex Aureus). Chrysography: gold script laid on
+   Tyrian-purple vellum. The dark rendition is the manuscript
+   itself; daylight shows its plainer companion leaves.
+   ------------------------------------------------------------ */
+
+body.illuminatio-aureus {
+	--ill-page: #efe4cb;
+	--ill-page-deep: #e7d8c2;
+	--ill-page-raised: #f5edda;
+	--ill-page-shade: #d9c6a4;
+	--ill-desk: #1e1420;
+	--ill-desk-raised: #2a1c2e;
+	--ill-desk-line: #463250;
+	--ill-desk-text: #ab98b4;
+	--ill-ink: #3c2e33;
+	--ill-ink-soft: #615052;
+	--ill-ink-faint: #8d7a7c;
+	--ill-rubric: #9c3151;
+	--ill-versal-a: #9c3151;
+	--ill-versal-b: #6b4a74;
+	--ill-accent: #6b4a74;
+	--ill-link: #5d4a86;
+	--ill-link-ext: #8c2f3e;
+	--ill-error: #9c2b33;
+	--ill-warning: #96660f;
+	--ill-success: #566b3d;
+	--ill-gold-hi: #f6dfa0;
+	--ill-gold-mid: #d2a134;
+	--ill-gold-lo: #8f671a;
+	--ill-gold-edge: #5c430e;
+	--ill-highlight: rgb(210 161 52 / 26%);
+	--ill-selection: rgb(107 74 116 / 20%);
+	--ill-ruling-color: #7a5c6e;
+	--ill-border-svg: var(--ill-svg-fillet);
+	--accent-h: 285;
+	--accent-s: 22%;
+	--accent-l: 37%;
+	--callout-quote: 107, 74, 116;
+}
+
+body.illuminatio-aureus.theme-dark {
+	--ill-page: #2e1e33;
+	--ill-page-deep: #271a2c;
+	--ill-page-raised: #38253e;
+	--ill-page-shade: #190f1d;
+	--ill-desk: #170f1a;
+	--ill-desk-raised: #221626;
+	--ill-desk-line: #4a3452;
+	--ill-desk-text: #a793b2;
+	--ill-ink: #e8d9b4;
+	--ill-ink-soft: #c2ab88;
+	--ill-ink-faint: #8d7a6e;
+	--ill-rubric: #d0705c;
+	--ill-versal-a: #dcae4c;
+	--ill-versal-b: #c9a2d8;
+	--ill-accent: #c9a2d8;
+	--ill-link: #b393c9;
+	--ill-link-ext: #d8a0b0;
+	--ill-error: #d06058;
+	--ill-warning: #cfa14a;
+	--ill-success: #98a873;
+	--ill-gold-hi: #f8e3a2;
+	--ill-gold-mid: #ddb04b;
+	--ill-gold-lo: #a8802a;
+	--ill-gold-edge: #2e2208;
+	--ill-highlight: rgb(221 176 75 / 20%);
+	--ill-selection: rgb(201 162 216 / 20%);
+	--ill-hairline: rgb(232 217 180 / 24%);
+	--ill-hairline-soft: rgb(232 217 180 / 13%);
+	--ill-hover-wash: rgb(232 217 180 / 7%);
+	--ill-active-wash: rgb(232 217 180 / 12%);
+	--ill-ruling-color: #b599c2;
+	--accent-h: 285;
+	--accent-s: 32%;
+	--accent-l: 68%;
+}
+
+/* ------------------------------------------------------------
+   CODEX GIGAS - Bohemia, c. 1220 (National Library of Sweden).
+   The Devil's Bible: the largest surviving medieval manuscript,
+   a whole monastery's herd of vellum, austere late-romanesque
+   script, fierce rubrication. Dark mode is the one lit by the
+   famous legend.
+   ------------------------------------------------------------ */
+
+body.illuminatio-gigas {
+	--ill-page: #e9d8ae;
+	--ill-page-deep: #decb9c;
+	--ill-page-raised: #f0e2c0;
+	--ill-page-shade: #cdb682;
+	--ill-desk: #1c130b;
+	--ill-desk-raised: #281b10;
+	--ill-desk-line: #443019;
+	--ill-desk-text: #a98f62;
+	--ill-ink: #33291b;
+	--ill-ink-soft: #59482c;
+	--ill-ink-faint: #837049;
+	--ill-rubric: #b03a1e;
+	--ill-versal-a: #b03a1e;
+	--ill-versal-b: #3f5a8c;
+	--ill-accent: #8c2f3e;
+	--ill-link: #3f5a8c;
+	--ill-link-ext: #7a4a2e;
+	--ill-error: #9c2314;
+	--ill-warning: #94601a;
+	--ill-success: #5a6a32;
+	--ill-gold-hi: #eecf83;
+	--ill-gold-mid: #c39231;
+	--ill-gold-lo: #8a661c;
+	--ill-gold-edge: #573f10;
+	--ill-highlight: rgb(195 146 49 / 26%);
+	--ill-selection: rgb(140 47 62 / 18%);
+	--ill-ruling-color: #765426;
+	--ill-font-display: "Illuminatio Textura", serif;
+	--ill-font-dropcap: "Illuminatio Textura", serif;
+	--ill-display-weight: 600;
+	--ill-display-spacing: 0.01em;
+	--ill-border-svg: var(--ill-svg-fillet);
+	--accent-h: 348;
+	--accent-s: 50%;
+	--accent-l: 37%;
+	--callout-important: 140, 47, 62;
+}
+
+body.illuminatio-gigas.theme-dark {
+	--ill-page: #262014;
+	--ill-page-deep: #1f1a10;
+	--ill-page-raised: #2f2817;
+	--ill-page-shade: #14100a;
+	--ill-desk: #100d08;
+	--ill-desk-raised: #1a150c;
+	--ill-desk-line: #3a2e1a;
+	--ill-desk-text: #9b8659;
+	--ill-ink: #d9c69a;
+	--ill-ink-soft: #ab9468;
+	--ill-ink-faint: #776649;
+	--ill-rubric: #cf4f28;
+	--ill-versal-a: #cf4f28;
+	--ill-versal-b: #7d94c9;
+	--ill-accent: #cf4f28;
+	--ill-link: #8ba0cd;
+	--ill-link-ext: #c08a5e;
+	--ill-error: #d0503c;
+	--ill-warning: #c79237;
+	--ill-success: #8a9c5c;
+	--ill-gold-hi: #eecf83;
+	--ill-gold-mid: #c79a33;
+	--ill-gold-lo: #94711f;
+	--ill-gold-edge: #2b2008;
+	--ill-highlight: rgb(199 154 51 / 20%);
+	--ill-selection: rgb(207 79 40 / 20%);
+	--ill-shadow-page: rgb(0 0 0 / 72%);
+	--ill-ruling-color: #b89c6a;
+	--accent-h: 14;
+	--accent-s: 62%;
+	--accent-l: 48%;
+}
+
+/* ------------------------------------------------------------
+   CODEX ARGENTEUS - Ravenna, early 6th century (Uppsala
+   University Library). Wulfila's Gothic gospels: silver ink on
+   purple-dyed vellum, gold for incipits and canon references.
+   Dark mode is the codex itself; light is its silvered ghost.
+   ------------------------------------------------------------ */
+
+body.illuminatio-argenteus {
+	--ill-page: #e9e0e6;
+	--ill-page-deep: #ddd2da;
+	--ill-page-raised: #f1eaef;
+	--ill-page-shade: #c9bac5;
+	--ill-desk: #221826;
+	--ill-desk-raised: #2e2133;
+	--ill-desk-line: #4c3a54;
+	--ill-desk-text: #a897b2;
+	--ill-ink: #423a4a;
+	--ill-ink-soft: #675d72;
+	--ill-ink-faint: #8f8598;
+	--ill-rubric: #a04358;
+	--ill-versal-a: #a04358;
+	--ill-versal-b: #6d6390;
+	--ill-accent: #6d6390;
+	--ill-link: #5d5a8c;
+	--ill-link-ext: #8c4f6b;
+	--ill-error: #a02b33;
+	--ill-warning: #8f6316;
+	--ill-success: #566b48;
+	--ill-gold-hi: #eed9a0;
+	--ill-gold-mid: #cda347;
+	--ill-gold-lo: #8f6e2a;
+	--ill-gold-edge: #5c4715;
+	--ill-highlight: rgb(205 163 71 / 26%);
+	--ill-selection: rgb(109 99 144 / 20%);
+	--ill-hairline: rgb(66 58 74 / 30%);
+	--ill-hairline-soft: rgb(66 58 74 / 16%);
+	--ill-hover-wash: rgb(66 58 74 / 8%);
+	--ill-active-wash: rgb(66 58 74 / 14%);
+	--ill-ruling-color: #7a6a86;
+	--ill-border-svg: var(--ill-svg-fillet);
+	--accent-h: 258;
+	--accent-s: 18%;
+	--accent-l: 48%;
+	--callout-quote: 109, 99, 144;
+}
+
+body.illuminatio-argenteus.theme-dark {
+	--ill-page: #2b1c31;
+	--ill-page-deep: #241729;
+	--ill-page-raised: #35233c;
+	--ill-page-shade: #170e1c;
+	--ill-desk: #150d19;
+	--ill-desk-raised: #201323;
+	--ill-desk-line: #493555;
+	--ill-desk-text: #a08fae;
+	--ill-ink: #cfc8bd;
+	--ill-ink-soft: #a89e91;
+	--ill-ink-faint: #7d7268;
+	--ill-rubric: #c98f3e;
+	--ill-versal-a: #dcae4c;
+	--ill-versal-b: #b9b2a6;
+	--ill-accent: #9dadd6;
+	--ill-link: #9daed6;
+	--ill-link-ext: #c9a2c0;
+	--ill-error: #cd5a5a;
+	--ill-warning: #cfa14a;
+	--ill-success: #93a873;
+	--ill-gold-hi: #f4dd9c;
+	--ill-gold-mid: #d8ad4a;
+	--ill-gold-lo: #a37e28;
+	--ill-gold-edge: #2e2210;
+	--ill-highlight: rgb(216 173 74 / 20%);
+	--ill-selection: rgb(157 174 214 / 22%);
+	--ill-hairline: rgb(207 200 189 / 24%);
+	--ill-hairline-soft: rgb(207 200 189 / 13%);
+	--ill-hover-wash: rgb(207 200 189 / 7%);
+	--ill-active-wash: rgb(207 200 189 / 12%);
+	--ill-shadow-page: rgb(0 0 0 / 68%);
+	--ill-ruling-color: #ab9ac2;
+	--accent-h: 228;
+	--accent-s: 40%;
+	--accent-l: 73%;
+}

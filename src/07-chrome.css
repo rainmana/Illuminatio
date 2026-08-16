@@ -1,0 +1,221 @@
+/* ============================================================
+   THE SCRIPTORIUM - workspace chrome around the leaf.
+   Dark waxed oak, brass-warm lettering, parchment panels.
+   ============================================================ */
+
+.workspace {
+	background-color: var(--ill-desk);
+}
+
+/* square woodcut icons everywhere (from the obsidian sample theme) */
+svg * {
+	stroke-linecap: square;
+	stroke-linejoin: miter;
+	rx: 0;
+	ry: 0;
+}
+
+/* kill the default rounded tab curves */
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
+	display: none;
+}
+
+.workspace-tab-header-container {
+	background-color: var(--ill-desk);
+	border-bottom: 1px solid var(--ill-desk-line);
+}
+
+.workspace-tab-header-inner-title {
+	font-family: var(--ill-font-body);
+}
+
+/* active tab carries a gilt thread where it meets the page */
+.workspace-tab-header.is-active .workspace-tab-header-inner {
+	box-shadow: inset 0 2px 0 color-mix(in srgb, var(--ill-gold-mid) 85%, transparent);
+}
+
+.workspace-ribbon {
+	background-color: var(--ill-desk);
+	border-color: var(--ill-desk-line);
+}
+
+.workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+	background-color: var(--ill-desk);
+	border-top: 1px solid var(--ill-desk-line);
+}
+
+/* view header sits on the desk, not on the page */
+.view-header {
+	background-color: var(--ill-desk);
+	border-bottom: 1px solid var(--ill-desk-line);
+}
+
+.view-header-title {
+	font-family: var(--ill-font-display);
+	font-weight: var(--ill-display-weight);
+	letter-spacing: 0.02em;
+	color: var(--ill-desk-text);
+}
+
+.view-header-breadcrumb,
+.view-header-breadcrumb-separator {
+	color: var(--ill-desk-text);
+}
+
+/* file explorer & sidebars: brass lettering on oak */
+.nav-folder-title {
+	font-variant-caps: small-caps;
+	letter-spacing: 0.035em;
+}
+
+.nav-file-title,
+.nav-folder-title {
+	border-radius: 0;
+}
+
+.tree-item-self {
+	border-radius: 0;
+}
+
+/* status bar: the colophon strip */
+.status-bar {
+	font-variant-caps: small-caps;
+	letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   PARCHMENT PANELS - menus, modals, prompts, popovers
+   ============================================================ */
+
+.menu {
+	background-color: var(--ill-page-raised);
+	border: 1px solid var(--ill-hairline);
+	border-radius: 0;
+	box-shadow: 0 4px 18px rgb(10 6 2 / 38%);
+	padding: 4px;
+}
+
+.menu-item {
+	border-radius: 0;
+}
+
+.menu-separator {
+	border-color: var(--ill-hairline-soft);
+}
+
+.modal {
+	border: 1px solid var(--ill-hairline);
+	box-shadow: 0 10px 44px rgb(8 5 2 / 50%);
+}
+
+.modal-title {
+	font-family: var(--ill-font-display);
+	font-weight: var(--ill-display-weight);
+	letter-spacing: 0.02em;
+}
+
+.prompt {
+	border: 1px solid var(--ill-hairline);
+	border-radius: 0;
+	background-color: var(--ill-page-raised);
+	box-shadow: 0 10px 44px rgb(8 5 2 / 50%);
+}
+
+.prompt-input {
+	font-family: var(--ill-font-body);
+}
+
+.suggestion-item.is-selected {
+	border-radius: 0;
+}
+
+.popover {
+	border: 1px solid var(--ill-hairline);
+	border-radius: 0;
+	box-shadow: 0 8px 30px rgb(8 5 2 / 42%);
+}
+
+.tooltip {
+	background-color: var(--ill-ink);
+	color: var(--ill-page-raised);
+	border-radius: 0;
+	font-family: var(--ill-font-body);
+}
+
+.notice {
+	background-color: var(--ill-page-raised);
+	color: var(--ill-ink);
+	border: 1px solid var(--ill-hairline);
+	border-inline-start: 3px solid var(--ill-gold-mid);
+	border-radius: 0;
+}
+
+/* ============================================================
+   SETTINGS & FORMS
+   ============================================================ */
+
+.setting-item-heading .setting-item-name {
+	color: var(--ill-rubric);
+	font-variant-caps: small-caps;
+	letter-spacing: 0.04em;
+}
+
+.vertical-tab-nav-item {
+	border-radius: 0;
+}
+
+.vertical-tab-nav-item.is-active {
+	box-shadow: inset 2px 0 0 var(--ill-gold-mid);
+}
+
+.checkbox-container {
+	border: 1px solid var(--ill-hairline);
+}
+
+.dropdown,
+input.metadata-input-text,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+	font-family: var(--ill-font-body);
+}
+
+/* ============================================================
+   SEARCH & HIGHLIGHTS
+   ============================================================ */
+
+.search-result-file-matched-text {
+	background-color: var(--ill-highlight);
+	color: inherit;
+}
+
+.search-result-container .search-result {
+	border-radius: 0;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+.is-mobile .view-header {
+	background-color: var(--ill-desk);
+}
+
+.is-mobile .workspace-drawer {
+	background-color: var(--ill-desk);
+}
+
+/* ============================================================
+   REDUCED MOTION - stillness is period-accurate anyway
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+	.workspace-tab-header,
+	.nav-file-title,
+	.nav-folder-title {
+		transition: none;
+	}
+}

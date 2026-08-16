@@ -1,0 +1,141 @@
+/* ============================================================
+   THE PAGE - a parchment leaf on a scriptorium desk
+   Reading view gets the finished folio; live preview gets the
+   same leaf in a slightly plainer working state.
+   ============================================================ */
+
+/* the desk around the leaf */
+.workspace-leaf-content[data-type="markdown"] .view-content {
+	position: relative;
+	background-color: var(--ill-desk);
+	background-image: radial-gradient(120% 100% at 50% -10%, rgb(255 233 180 / 5%), transparent 55%);
+}
+
+/* unifying grain overlay: parchment tooth over ink and desk alike */
+.workspace-leaf-content[data-type="markdown"] .view-content::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 8;
+	pointer-events: none;
+	background-image: var(--ill-svg-grain);
+	mix-blend-mode: multiply;
+	opacity: var(--ill-texture);
+}
+
+body.theme-dark .workspace-leaf-content[data-type="markdown"] .view-content::after {
+	mix-blend-mode: soft-light;
+	opacity: calc(var(--ill-texture) * 0.85);
+}
+
+/* the leaf itself */
+.markdown-reading-view .markdown-preview-sizer,
+.markdown-source-view.mod-cm6 .cm-sizer {
+	position: relative;
+	z-index: 0;
+	border: 1px solid rgb(30 20 8 / 38%);
+	border-radius: 2px;
+	background-color: var(--ill-page);
+	background-image:
+		linear-gradient(90deg, color-mix(in srgb, var(--ill-page-shade) 55%, transparent), transparent 3em),
+		linear-gradient(270deg, color-mix(in srgb, var(--ill-page-shade) 30%, transparent), transparent 2em),
+		var(--ill-svg-mottle);
+	background-blend-mode: normal, normal, multiply;
+	box-shadow:
+		inset 0 0 5px color-mix(in srgb, var(--ill-page-shade) calc(var(--ill-edge-shade) * 0.9), transparent),
+		inset 0 0 68px color-mix(in srgb, var(--ill-page-shade) var(--ill-edge-shade), transparent),
+		0 1px 2px rgb(0 0 0 / 30%),
+		0 6px 22px var(--ill-shadow-page);
+	margin-block: 1.4em 2.2em;
+}
+
+.markdown-reading-view .markdown-preview-sizer {
+	padding: 3.4em var(--file-margins) 4.8em;
+}
+
+.markdown-source-view.mod-cm6 .cm-sizer {
+	padding-block: 2.6em 4.8em;
+}
+
+/* plummet ruling: a uniform grid scored across the whole leaf,
+   the way a scribe ruled before writing */
+.markdown-reading-view .markdown-preview-sizer::before,
+.markdown-source-view.mod-cm6 .cm-sizer::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-image:
+		linear-gradient(var(--ill-ruling-color), var(--ill-ruling-color)),
+		linear-gradient(var(--ill-ruling-color), var(--ill-ruling-color)),
+		repeating-linear-gradient(
+			180deg,
+			transparent 0,
+			transparent calc(var(--font-text-size, 16px) * var(--line-height-normal, 1.6) - 1px),
+			var(--ill-ruling-color) calc(var(--font-text-size, 16px) * var(--line-height-normal, 1.6) - 1px),
+			var(--ill-ruling-color) calc(var(--font-text-size, 16px) * var(--line-height-normal, 1.6))
+		);
+	background-repeat: no-repeat, no-repeat, repeat;
+	background-size: 1px 100%, 1px 100%, 100% auto;
+	background-position:
+		calc(var(--file-margins, 2.8em) - 1.2em) 0,
+		calc(100% - var(--file-margins, 2.8em) + 1.2em) 0,
+		0 0.55em;
+	opacity: var(--ill-ruling);
+}
+
+/* head ornament band across the top margin of the leaf */
+.markdown-reading-view .markdown-preview-sizer::after,
+.markdown-source-view.mod-cm6 .cm-sizer::after {
+	content: "";
+	position: absolute;
+	top: 1.1em;
+	right: calc(var(--file-margins, 2.8em) - 1.1em);
+	left: calc(var(--file-margins, 2.8em) - 1.1em);
+	height: 13px;
+	pointer-events: none;
+	background-color: color-mix(in srgb, var(--ill-gold-mid) 72%, var(--ill-rubric));
+	mask-image: var(--ill-border-svg);
+	mask-repeat: repeat-x;
+	mask-size: auto 100%;
+	mask-position: center;
+	opacity: 0.85;
+}
+
+/* keep embedded/nested renderers modest: no leaf-in-a-leaf */
+.popover .markdown-preview-sizer {
+	margin: 0.5em;
+	padding: 1.4em 1.5em 2em;
+	box-shadow: inset 0 0 24px color-mix(in srgb, var(--ill-page-shade) 40%, transparent);
+}
+
+.popover .markdown-preview-sizer::after {
+	content: none;
+}
+
+.canvas-node .markdown-preview-sizer {
+	margin: 0;
+	padding: 0.9em 1.1em 1.6em;
+	border: none;
+	box-shadow: none;
+	background-image: none;
+}
+
+.canvas-node .markdown-preview-sizer::after {
+	content: none;
+}
+
+.export-image .markdown-preview-sizer {
+	margin: 0;
+}
+
+/* phones: tighter desk, smaller margins */
+.is-mobile .markdown-reading-view .markdown-preview-sizer,
+.is-mobile .markdown-source-view.mod-cm6 .cm-sizer {
+	margin-block: 0.6em 1em;
+}
+
+.is-mobile .markdown-reading-view .markdown-preview-sizer {
+	padding: 2.4em var(--file-margins) 3.2em;
+}

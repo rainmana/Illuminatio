@@ -1,0 +1,237 @@
+/* ============================================================
+   BLOCK FURNITURE
+   ============================================================ */
+
+/* -- blockquotes read as marginal glosses: smaller, tighter
+      script against a doubled rubric rule -- */
+.markdown-rendered blockquote {
+	position: relative;
+	margin-inline: 0.2em 0.6em;
+	padding: 0.25em 1em 0.25em 1.1em;
+	border-inline-start: 5px double color-mix(in srgb, var(--ill-rubric) 62%, transparent);
+	font-size: 0.93em;
+	line-height: 1.52;
+}
+
+.markdown-rendered blockquote p {
+	text-align: start;
+}
+
+/* -- ordinal lists count in roman numerals, as a scribe would -- */
+.markdown-rendered ol {
+	list-style-type: upper-roman;
+}
+
+.markdown-rendered ol ol {
+	list-style-type: lower-alpha;
+}
+
+.markdown-rendered ol ol ol {
+	list-style-type: decimal;
+}
+
+.markdown-rendered ol > li::marker {
+	font-family: var(--ill-font-display);
+	font-size: 0.94em;
+}
+
+/* -- versal alternation: red and contrast pigment take turns -- */
+.markdown-rendered ul > li:nth-child(odd)::marker,
+.markdown-rendered ol > li:nth-child(odd)::marker {
+	color: var(--ill-versal-a);
+}
+
+.markdown-rendered ul > li:nth-child(even)::marker,
+.markdown-rendered ol > li:nth-child(even)::marker {
+	color: var(--ill-versal-b);
+}
+
+/* -- tasks: completion is marked by expunction (dots beneath),
+      the scribe's way of deleting without striking out.
+      the decoration itself comes from --checklist-done-decoration -- */
+.markdown-rendered .task-list-item-checkbox,
+.markdown-source-view.mod-cm6 .task-list-item-checkbox {
+	border-width: 1px;
+	box-shadow: inset 1px 1px 0 rgb(20 12 4 / 8%);
+}
+
+/* -- horizontal rules become pen-flourished line fillers -- */
+.markdown-rendered hr,
+.markdown-source-view.mod-cm6 hr {
+	height: 15px;
+	border: none;
+	background-color: color-mix(in srgb, var(--ill-rubric) 78%, var(--ill-gold-lo));
+	mask-image: var(--ill-svg-filler);
+	mask-repeat: no-repeat;
+	mask-size: auto 100%;
+	mask-position: center;
+}
+
+/* ============================================================
+   CALLOUTS - nota panels in the margin tradition
+   ============================================================ */
+
+.callout {
+	border: 1px solid rgb(var(--callout-color) / 42%);
+	border-inline-start: 3px solid rgb(var(--callout-color) / 75%);
+	box-shadow: inset 0 0 26px rgb(var(--callout-color) / 5%);
+}
+
+.callout-title {
+	align-items: center;
+}
+
+.callout-title-inner {
+	font-family: var(--ill-font-display);
+	font-weight: var(--ill-display-weight);
+	font-variant-caps: var(--ill-display-variant);
+	letter-spacing: 0.03em;
+}
+
+/* the manicule: a pointing hand for note-like callouts */
+.callout[data-callout="note"] .callout-icon svg,
+.callout[data-callout="info"] .callout-icon svg,
+.callout[data-callout="tip"] .callout-icon svg,
+.callout[data-callout="hint"] .callout-icon svg,
+.callout[data-callout="summary"] .callout-icon svg,
+.callout[data-callout="abstract"] .callout-icon svg,
+.callout[data-callout="example"] .callout-icon svg,
+.callout[data-callout="quote"] .callout-icon svg,
+.callout[data-callout="cite"] .callout-icon svg {
+	display: none;
+}
+
+.callout[data-callout="note"] .callout-icon::after,
+.callout[data-callout="info"] .callout-icon::after,
+.callout[data-callout="tip"] .callout-icon::after,
+.callout[data-callout="hint"] .callout-icon::after,
+.callout[data-callout="summary"] .callout-icon::after,
+.callout[data-callout="abstract"] .callout-icon::after,
+.callout[data-callout="example"] .callout-icon::after,
+.callout[data-callout="quote"] .callout-icon::after,
+.callout[data-callout="cite"] .callout-icon::after {
+	content: "";
+	display: block;
+	width: 1.5em;
+	height: 1em;
+	background-color: rgb(var(--callout-color));
+	mask-image: var(--ill-svg-manicule);
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position: center;
+}
+
+/* ============================================================
+   TABLES - framed in the manner of Eusebian canon tables:
+   double fillet frame, ruled columns, rubricated heads
+   ============================================================ */
+
+.markdown-rendered table {
+	border-collapse: collapse;
+	border: 1px solid var(--ill-hairline);
+	outline: 1px solid var(--ill-hairline-soft);
+	outline-offset: 3px;
+	margin-block: 1.2em;
+}
+
+.markdown-rendered th {
+	border-bottom: 3px double color-mix(in srgb, var(--ill-rubric) 55%, transparent);
+	padding: 0.45em 0.85em;
+	letter-spacing: 0.04em;
+	font-variant-caps: var(--ill-display-variant);
+}
+
+.markdown-rendered td {
+	padding: 0.4em 0.85em;
+}
+
+.markdown-rendered th + th,
+.markdown-rendered td + td {
+	border-inline-start: 1px solid var(--ill-hairline-soft);
+}
+
+/* ============================================================
+   CODE - the honest anachronism, set as a schema panel
+   ============================================================ */
+
+.markdown-rendered pre {
+	border: 1px solid var(--ill-hairline-soft);
+	box-shadow: inset 0 1px 8px color-mix(in srgb, var(--ill-page-shade) 35%, transparent);
+}
+
+.markdown-rendered :not(pre) > code,
+.markdown-source-view.mod-cm6 .cm-inline-code {
+	border: 1px solid var(--ill-hairline-soft);
+	padding: 0.05em 0.32em;
+}
+
+.copy-code-button {
+	font-family: var(--ill-font-body);
+	font-size: 0.72em;
+	color: var(--ill-ink-soft);
+	background-color: var(--ill-page-raised);
+	border: 1px solid var(--ill-hairline-soft);
+	border-radius: 0;
+}
+
+/* ============================================================
+   IMAGES & EMBEDS - tipped-in plates and inserted leaves
+   ============================================================ */
+
+.markdown-rendered .image-embed img {
+	padding: 4px;
+	border: 1px solid var(--ill-hairline);
+	background-color: var(--ill-page-raised);
+	box-shadow:
+		inset 0 0 0 1px color-mix(in srgb, var(--ill-gold-lo) 30%, transparent),
+		0 1px 5px rgb(15 9 3 / 25%);
+}
+
+.markdown-rendered .markdown-embed {
+	border: 1px solid var(--ill-hairline-soft);
+	border-inline-start: var(--embed-border-start);
+	background-color: var(--embed-background);
+	box-shadow: inset 0 1px 10px color-mix(in srgb, var(--ill-page-shade) 30%, transparent);
+	padding: var(--embed-padding);
+}
+
+/* ============================================================
+   SMALL FURNITURE
+   ============================================================ */
+
+/* tags as small red nota marks */
+.markdown-rendered a.tag,
+.markdown-source-view.mod-cm6 .cm-hashtag {
+	font-variant-caps: small-caps;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-hashtag-begin {
+	border-inline-end: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-hashtag-end {
+	border-inline-start: none;
+}
+
+/* footnotes: the apparatus at the foot of the leaf */
+.markdown-rendered .footnotes {
+	font-size: var(--footnote-size);
+	color: var(--ill-ink-soft);
+}
+
+.markdown-rendered .footnotes p {
+	text-align: start;
+}
+
+/* properties block: the colophon above the text */
+.metadata-container {
+	border-block: 1px solid var(--ill-hairline-soft);
+	padding-block: 0.35em;
+}
+
+.metadata-container .metadata-property-key {
+	font-variant-caps: small-caps;
+	letter-spacing: 0.03em;
+}

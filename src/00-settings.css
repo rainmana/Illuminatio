@@ -1,0 +1,205 @@
+/* @settings
+
+name: Illuminatio
+id: illuminatio
+settings:
+    -
+        id: ill-manuscript-heading
+        title: The manuscript
+        type: heading
+        level: 2
+    -
+        id: ill-manuscript
+        title: Manuscript model
+        description: The codex the theme takes its parchment, pigments, script and ornament from. Each has a daylight and a candlelit (dark mode) rendition.
+        type: class-select
+        allowEmpty: false
+        default: illuminatio-kells
+        options:
+            -
+                label: Book of Kells - insular, c. 800
+                value: illuminatio-kells
+            -
+                label: Lindisfarne Gospels - insular, c. 715
+                value: illuminatio-lindisfarne
+            -
+                label: Winchester Bible - romanesque, c. 1160
+                value: illuminatio-winchester
+            -
+                label: Tres Riches Heures - gothic, c. 1412
+                value: illuminatio-riches
+            -
+                label: Ellesmere Chaucer - english, c. 1400
+                value: illuminatio-ellesmere
+            -
+                label: Codex Aureus - carolingian gold on purple
+                value: illuminatio-aureus
+            -
+                label: Codex Gigas - the Devil's Bible, c. 1220
+                value: illuminatio-gigas
+            -
+                label: Codex Argenteus - silver on purple, 6th c.
+                value: illuminatio-argenteus
+    -
+        id: ill-manuscript-notes
+        title: About the models
+        type: info-text
+        markdown: true
+        description: |
+            **Kells** never used gold - its shine is orpiment yellow. **Lindisfarne** is cooler and more delicate. **Winchester** is lapis and burnished leaf on white calfskin. **Tres Riches Heures** is ultramarine and gold in textura script; its dark mode is the blue of its night skies. **Ellesmere** alternates red and blue paraphs around a warm English bookhand. **Aureus** is gold script on Tyrian purple (dark mode is the codex itself). **Gigas** is the austere giant, fiercest in the dark. **Argenteus** is tarnished silver on imperial purple.
+    -
+        id: ill-script-heading
+        title: Script & set
+        type: heading
+        level: 2
+    -
+        id: ill-page-width
+        title: Text block width
+        description: Width of the written space, in ems.
+        type: variable-number-slider
+        default: 42
+        min: 30
+        max: 54
+        step: 1
+        format: em
+    -
+        id: ill-ragged
+        title: Ragged right margin
+        description: Medieval prose is justified; turn this on for an unjustified, unhyphenated block.
+        type: class-toggle
+        default: false
+    -
+        id: ill-scribal-ligatures
+        title: Scribal ligatures
+        description: Historic and discretionary ligatures (ct, st and friends) where the typeface carries them.
+        type: class-toggle
+        default: false
+    -
+        id: ill-pilcrows
+        title: Pilcrow paragraph marks
+        description: A red capitulum at the head of every paragraph.
+        type: class-toggle
+        default: false
+    -
+        id: ill-system-interface-font
+        title: System interface font
+        description: Use your system font for menus and chrome instead of the manuscript face.
+        type: class-toggle
+        default: false
+    -
+        id: ill-illumination-heading
+        title: Illumination
+        type: heading
+        level: 2
+    -
+        id: ill-dropcap-versal
+        title: Plain versal drop caps
+        description: A naked coloured capital instead of the gilded panel.
+        type: class-toggle
+        default: false
+    -
+        id: ill-hide-drop-caps
+        title: Hide drop caps
+        type: class-toggle
+        default: false
+    -
+        id: ill-hide-gold
+        title: Matte headings
+        description: No gilded lettering; headings take the rubric colour instead.
+        type: class-toggle
+        default: false
+    -
+        id: ill-hide-ornaments
+        title: Hide flourishes & borders
+        description: Removes the head ornament band, heading flourishes, manicule callout marks and picture frames.
+        type: class-toggle
+        default: false
+    -
+        id: ill-hide-versals
+        title: Uniform list markers
+        description: Stop alternating red and blue list markers, and count with arabic numerals.
+        type: class-toggle
+        default: false
+    -
+        id: ill-leaf-heading
+        title: The leaf
+        type: heading
+        level: 2
+    -
+        id: ill-texture
+        title: Parchment texture
+        description: Strength of the vellum grain overlay.
+        type: variable-number-slider
+        default: 62
+        min: 0
+        max: 100
+        step: 2
+        format: '%'
+    -
+        id: ill-ruling
+        title: Ruling
+        description: Visibility of the plummet ruling grid scored into the leaf.
+        type: variable-number-slider
+        default: 20
+        min: 0
+        max: 100
+        step: 2
+        format: '%'
+    -
+        id: ill-edge-shade
+        title: Edge darkening
+        description: How strongly the margins of the leaf are aged and handled.
+        type: variable-number-slider
+        default: 55
+        min: 0
+        max: 100
+        step: 5
+        format: '%'
+    -
+        id: ill-flat-page
+        title: Flat page
+        description: Drop the desk and floating leaf; the parchment fills the pane edge to edge.
+        type: class-toggle
+        default: false
+    -
+        id: ill-plain-ui
+        title: Parchment interface chrome
+        description: Sidebars and panels in parchment tones instead of the dark scriptorium desk.
+        type: class-toggle
+        default: false
+    -
+        id: ill-conventions-heading
+        title: Scribal conventions
+        type: heading
+        level: 2
+    -
+        id: ill-plain-quotes
+        title: Plain blockquotes
+        description: Regular blockquotes instead of marginal-gloss styling.
+        type: class-toggle
+        default: false
+    -
+        id: ill-plain-tables
+        title: Plain tables
+        description: Regular tables instead of canon-table framing.
+        type: class-toggle
+        default: false
+    -
+        id: ill-modern-tasks
+        title: Strikethrough completed tasks
+        description: The scribe deleted by expunction - dots beneath the words. Turn this on for a modern strikethrough instead.
+        type: class-toggle
+        default: false
+    -
+        id: ill-performance-heading
+        title: Performance
+        type: heading
+        level: 2
+    -
+        id: ill-performance
+        title: Performance mode
+        description: Removes texture overlays, gradients and shadows for older machines.
+        type: class-toggle
+        default: false
+
+*/

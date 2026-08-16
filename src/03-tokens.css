@@ -1,0 +1,455 @@
+/* ============================================================
+   TOKENS - pigment constants + manuscript slots
+   Default manuscript: The Book of Kells (Trinity College Dublin,
+   MS A. I. 58, c. 800). Insular palette: iron-gall ink, red lead,
+   orpiment, verdigris, woad. Kells used no gold leaf - its
+   radiance came from orpiment, so the default "gilding" is
+   orpiment-yellow rather than metallic gold.
+   ============================================================ */
+
+body {
+	/* -- pigment constants (shared historical reference) -- */
+	--pg-minium: #b34a20;
+	--pg-vermilion: #a83424;
+	--pg-kermes: #8c2f3e;
+	--pg-orpiment: #d3a339;
+	--pg-ochre: #a87e2e;
+	--pg-verdigris: #2f6350;
+	--pg-vergaut: #5f6f33;
+	--pg-woad: #33527d;
+	--pg-ultramarine: #27448c;
+	--pg-azurite: #2f6292;
+	--pg-folium: #6b4a74;
+	--pg-tyrian: #4d2b52;
+	--pg-irongall: #3a2c1a;
+	--pg-lampblack: #26211a;
+	--pg-silver: #b7b0a4;
+
+	/* -- parchment & desk -- */
+	--ill-page: #efe2c4;
+	--ill-page-deep: #e5d3a9;
+	--ill-page-raised: #f5ecd8;
+	--ill-page-shade: #d9c290;
+	--ill-desk: #241a11;
+	--ill-desk-raised: #33261a;
+	--ill-desk-line: #4a3820;
+	--ill-desk-text: #b6a075;
+
+	/* -- inks -- */
+	--ill-ink: #3a2c1a;
+	--ill-ink-soft: #5d4a2f;
+	--ill-ink-faint: #8b7452;
+	--ill-rubric: #a2401b;
+	--ill-versal-a: #a2401b;
+	--ill-versal-b: #2f6350;
+	--ill-accent: #2f6350;
+	--ill-link: #33527d;
+	--ill-link-ext: #6b4a74;
+	--ill-error: #97281c;
+	--ill-warning: #96660f;
+	--ill-success: #4c6b2f;
+
+	/* -- gilding (Kells: orpiment imitation gold) -- */
+	--ill-gold-hi: #f2d98c;
+	--ill-gold-mid: #d3a339;
+	--ill-gold-lo: #97701f;
+	--ill-gold-edge: #6b4e13;
+
+	/* -- washes -- */
+	--ill-highlight: rgb(211 163 57 / 30%);
+	--ill-selection: rgb(47 99 80 / 22%);
+	--ill-hover-wash: rgb(93 74 47 / 9%);
+	--ill-active-wash: rgb(93 74 47 / 15%);
+	--ill-hairline: rgb(93 74 47 / 32%);
+	--ill-hairline-soft: rgb(93 74 47 / 18%);
+	--ill-ruling-color: #7a5228;
+	--ill-shadow-page: rgb(28 18 8 / 42%);
+
+	/* -- scripts -- */
+	--ill-font-body: "Illuminatio Junicode", "Junicode", "Palatino Linotype", serif;
+	--ill-font-display: "Illuminatio Uncial", "Illuminatio Junicode", serif;
+	--ill-font-dropcap: "Illuminatio Uncial", "Illuminatio Junicode", serif;
+	--ill-display-weight: 400;
+	--ill-display-transform: none;
+	--ill-display-variant: normal;
+	--ill-display-spacing: 0.01em;
+
+	/* -- tunables (Style Settings sliders override these) -- */
+	--ill-texture: 62%;
+	--ill-ruling: 20%;
+	--ill-edge-shade: 55%;
+	--ill-page-width: 42em;
+	--ill-border-svg: var(--ill-svg-knot);
+
+	/* -- accent hsl for native obsidian accent math -- */
+	--accent-h: 160;
+	--accent-s: 35%;
+	--accent-l: 29%;
+}
+
+/* ============================================================
+   OBSIDIAN VARIABLE MAPPING - one mapping, both modes
+   (the --ill-* slots above flip with .theme-dark and with each
+   manuscript class, so this block never needs duplicating)
+   ============================================================ */
+
+.theme-light,
+.theme-dark {
+	color-scheme: light;
+
+	/* surfaces */
+	--background-primary: var(--ill-page);
+	--background-primary-alt: var(--ill-page-deep);
+	--background-secondary: var(--ill-desk);
+	--background-secondary-alt: var(--ill-desk-raised);
+	--background-modifier-hover: var(--ill-hover-wash);
+	--background-modifier-active-hover: var(--ill-active-wash);
+	--background-modifier-border: var(--ill-hairline);
+	--background-modifier-border-hover: var(--ill-hairline);
+	--background-modifier-border-focus: var(--ill-accent);
+	--background-modifier-error: var(--ill-error);
+	--background-modifier-error-hover: var(--ill-error);
+	--background-modifier-success: var(--ill-success);
+	--background-modifier-message: var(--ill-ink);
+	--background-modifier-form-field: var(--ill-page-raised);
+
+	/* text */
+	--text-normal: var(--ill-ink);
+	--text-muted: var(--ill-ink-soft);
+	--text-faint: var(--ill-ink-faint);
+	--text-on-accent: var(--ill-page-raised);
+	--text-on-accent-inverted: var(--ill-ink);
+	--text-error: var(--ill-error);
+	--text-warning: var(--ill-warning);
+	--text-success: var(--ill-success);
+	--text-accent: var(--ill-link);
+	--text-accent-hover: var(--ill-rubric);
+	--text-selection: var(--ill-selection);
+	--text-highlight-bg: var(--ill-highlight);
+	--caret-color: var(--ill-rubric);
+
+	/* interactive */
+	--interactive-normal: var(--ill-page-raised);
+	--interactive-hover: var(--ill-page-deep);
+	--interactive-accent: var(--ill-accent);
+	--interactive-accent-hover: var(--ill-rubric);
+
+	/* fonts */
+	--font-text-theme: var(--ill-font-body);
+	--font-interface-theme: var(--ill-font-body);
+
+	/* editor block */
+	--file-line-width: var(--ill-page-width);
+	--file-margins: 2.8em;
+	--line-height-normal: 1.6;
+
+	/* headings */
+	--inline-title-font: var(--ill-font-display);
+	--inline-title-weight: var(--ill-display-weight);
+	--inline-title-size: 2.5em;
+	--inline-title-color: var(--ill-ink);
+	--heading-spacing: 1.15em;
+	--h1-font: var(--ill-font-display);
+	--h2-font: var(--ill-font-display);
+	--h3-font: var(--ill-font-display);
+	--h4-font: var(--ill-font-body);
+	--h5-font: var(--ill-font-body);
+	--h6-font: var(--ill-font-body);
+	--h1-size: 1.95em;
+	--h2-size: 1.55em;
+	--h3-size: 1.28em;
+	--h4-size: 1.12em;
+	--h5-size: 1em;
+	--h6-size: 0.92em;
+	--h1-weight: var(--ill-display-weight);
+	--h2-weight: var(--ill-display-weight);
+	--h3-weight: var(--ill-display-weight);
+	--h4-weight: 700;
+	--h5-weight: 700;
+	--h6-weight: 700;
+	--h1-color: var(--ill-ink);
+	--h2-color: var(--ill-rubric);
+	--h3-color: var(--ill-versal-b);
+	--h4-color: var(--ill-ink);
+	--h5-color: var(--ill-ink-soft);
+	--h6-color: var(--ill-ink-soft);
+	--h1-line-height: 1.25;
+	--h2-line-height: 1.3;
+
+	/* emphasis */
+	--bold-weight: 700;
+	--bold-color: inherit;
+	--italic-color: inherit;
+
+	/* links */
+	--link-color: var(--ill-link);
+	--link-color-hover: var(--ill-rubric);
+	--link-decoration: none;
+	--link-decoration-hover: none;
+	--link-external-color: var(--ill-link-ext);
+	--link-external-color-hover: var(--ill-rubric);
+	--link-external-decoration: none;
+	--link-unresolved-color: var(--ill-ink-faint);
+	--link-unresolved-opacity: 0.9;
+	--link-unresolved-decoration-style: dashed;
+
+	/* blockquotes (glosses) */
+	--blockquote-border-thickness: 2px;
+	--blockquote-border-color: var(--ill-rubric);
+	--blockquote-font-style: italic;
+	--blockquote-color: var(--ill-ink-soft);
+	--blockquote-background-color: transparent;
+
+	/* callouts */
+	--callout-border-width: 1px;
+	--callout-border-opacity: 0.42;
+	--callout-radius: 0;
+	--callout-blend-mode: normal;
+	--callout-title-size: inherit;
+	--callout-default: 51, 82, 125;
+	--callout-info: 51, 82, 125;
+	--callout-note: 51, 82, 125;
+	--callout-summary: 47, 98, 146;
+	--callout-tip: 47, 99, 80;
+	--callout-todo: 47, 98, 146;
+	--callout-success: 76, 107, 47;
+	--callout-question: 150, 102, 15;
+	--callout-warning: 150, 102, 15;
+	--callout-fail: 151, 40, 28;
+	--callout-error: 151, 40, 28;
+	--callout-bug: 151, 40, 28;
+	--callout-important: 140, 47, 62;
+	--callout-example: 107, 74, 116;
+	--callout-quote: 93, 74, 47;
+
+	/* code */
+	--code-radius: 0;
+	--code-size: 0.85em;
+	--code-background: var(--ill-page-deep);
+	--code-normal: var(--ill-ink);
+	--code-comment: var(--ill-ink-faint);
+	--code-function: var(--ill-link);
+	--code-important: var(--ill-warning);
+	--code-keyword: var(--ill-rubric);
+	--code-operator: var(--ill-ink-soft);
+	--code-property: var(--ill-versal-b);
+	--code-punctuation: var(--ill-ink-soft);
+	--code-string: var(--ill-success);
+	--code-tag: var(--ill-link-ext);
+	--code-value: var(--ill-warning);
+
+	/* checkboxes & tasks */
+	--checkbox-radius: 0;
+	--checkbox-size: 1.05em;
+	--checkbox-color: var(--ill-rubric);
+	--checkbox-color-hover: var(--ill-rubric);
+	--checkbox-border-color: var(--ill-ink-soft);
+	--checkbox-border-color-hover: var(--ill-rubric);
+	--checkbox-marker-color: var(--ill-page-raised);
+	--checklist-done-decoration: underline dotted;
+	--checklist-done-color: var(--ill-ink-faint);
+
+	/* lists */
+	--list-marker-color: var(--ill-versal-b);
+	--list-marker-color-hover: var(--ill-rubric);
+	--list-marker-color-collapsed: var(--ill-rubric);
+	--list-indent: 2em;
+	--list-spacing: 0.08em;
+
+	/* tables */
+	--table-background: transparent;
+	--table-border-width: 0;
+	--table-border-color: var(--ill-hairline);
+	--table-header-font: var(--ill-font-display);
+	--table-header-size: 0.94em;
+	--table-header-weight: var(--ill-display-weight);
+	--table-header-color: var(--ill-rubric);
+	--table-header-background: transparent;
+	--table-header-background-hover: var(--ill-hover-wash);
+	--table-row-background-hover: var(--ill-hover-wash);
+	--table-row-alt-background: transparent;
+	--table-text-color: var(--ill-ink);
+	--table-drag-handle-color: var(--ill-ink-faint);
+	--table-drag-handle-color-active: var(--ill-rubric);
+	--table-add-button-color: var(--ill-ink-faint);
+
+	/* tags */
+	--tag-size: 0.82em;
+	--tag-color: var(--ill-rubric);
+	--tag-color-hover: var(--ill-page-raised);
+	--tag-background: transparent;
+	--tag-background-hover: var(--ill-rubric);
+	--tag-border-color: var(--ill-rubric);
+	--tag-border-color-hover: var(--ill-rubric);
+	--tag-border-width: 1px;
+	--tag-radius: 0;
+	--tag-weight: inherit;
+
+	/* embeds */
+	--embed-background: var(--ill-page-raised);
+	--embed-border-start: 2px solid var(--ill-gold-mid);
+	--embed-padding: 0.8em 1em;
+
+	/* rules */
+	--hr-color: var(--ill-ink-soft);
+	--hr-thickness: 1px;
+
+	/* metadata / properties */
+	--metadata-label-text-color: var(--ill-ink-soft);
+	--metadata-input-text-color: var(--ill-ink);
+	--metadata-background: transparent;
+	--metadata-border-color: var(--ill-hairline-soft);
+	--metadata-border-width: 0;
+	--metadata-property-radius: 0;
+	--metadata-input-background-active: var(--ill-hover-wash);
+	--metadata-input-background-hover: var(--ill-hover-wash);
+
+	/* footnotes */
+	--footnote-size: 0.86em;
+
+	/* icons */
+	--icon-color: var(--ill-desk-text);
+	--icon-color-hover: var(--ill-gold-hi);
+	--icon-color-active: var(--ill-gold-hi);
+	--icon-color-focused: var(--ill-gold-hi);
+	--icon-opacity: 0.9;
+	--icon-opacity-hover: 1;
+	--clickable-icon-radius: 0;
+
+	/* dividers, scrollbars */
+	--divider-color: var(--ill-desk-line);
+	--divider-color-hover: var(--ill-gold-mid);
+	--divider-width: 1px;
+	--scrollbar-bg: transparent;
+	--scrollbar-thumb-bg: rgb(122 96 54 / 35%);
+	--scrollbar-active-thumb-bg: rgb(122 96 54 / 55%);
+
+	/* tabs & frame */
+	--titlebar-background: var(--ill-desk);
+	--titlebar-background-focused: var(--ill-desk);
+	--titlebar-text-color: var(--ill-desk-text);
+	--titlebar-text-color-focused: var(--ill-desk-text);
+	--tab-container-background: var(--ill-desk);
+	--tab-background-active: var(--ill-page);
+	--tab-text-color: var(--ill-desk-text);
+	--tab-text-color-focused: var(--ill-desk-text);
+	--tab-text-color-focused-active: var(--ill-ink);
+	--tab-text-color-focused-active-current: var(--ill-ink);
+	--tab-divider-color: var(--ill-desk-line);
+	--tab-outline-color: transparent;
+	--tab-curve: 0;
+	--tab-radius: 0;
+	--tab-radius-active: 0;
+
+	/* sidebars / navigation */
+	--nav-item-color: var(--ill-desk-text);
+	--nav-item-color-hover: var(--ill-gold-hi);
+	--nav-item-color-active: var(--ill-gold-hi);
+	--nav-item-color-selected: var(--ill-gold-hi);
+	--nav-item-background-hover: rgb(255 244 214 / 5%);
+	--nav-item-background-active: rgb(255 244 214 / 9%);
+	--nav-item-background-selected: rgb(255 244 214 / 9%);
+	--nav-item-weight-hover: inherit;
+	--nav-indentation-guide-color: var(--ill-desk-line);
+	--nav-collapse-icon-color: var(--ill-desk-text);
+	--nav-collapse-icon-color-collapsed: var(--ill-desk-text);
+	--nav-heading-color: var(--ill-gold-mid);
+
+	/* status bar & ribbon */
+	--status-bar-background: var(--ill-desk);
+	--status-bar-border-color: var(--ill-desk-line);
+	--status-bar-border-width: 1px 0 0 0;
+	--status-bar-text-color: var(--ill-desk-text);
+	--status-bar-font-size: 0.75rem;
+	--ribbon-background: var(--ill-desk);
+	--ribbon-background-collapsed: var(--ill-desk);
+
+	/* modals, menus, popovers */
+	--modal-background: var(--ill-page-raised);
+	--modal-border-width: 1px;
+	--modal-border-color: var(--ill-hairline);
+	--modal-radius: 0;
+	--prompt-border-width: 1px;
+	--prompt-border-color: var(--ill-hairline);
+
+	/* inputs */
+	--input-radius: 0;
+	--toggle-radius: 0;
+	--toggle-thumb-radius: 0;
+	--toggle-border-width: 1px;
+	--slider-thumb-radius: 0;
+	--slider-thumb-border-width: 1px;
+	--slider-thumb-border-color: var(--ill-ink-soft);
+	--slider-track-background: var(--ill-hairline-soft);
+	--dropdown-background: var(--ill-page-raised);
+
+	/* graph view */
+	--graph-text: var(--ill-ink-soft);
+	--graph-line: var(--ill-hairline-soft);
+	--graph-node: var(--ill-ink-soft);
+	--graph-node-focused: var(--ill-rubric);
+	--graph-node-tag: var(--ill-rubric);
+	--graph-node-attachment: var(--ill-versal-b);
+	--graph-node-unresolved: var(--ill-ink-faint);
+
+	/* canvas */
+	--canvas-background: var(--ill-page-deep);
+	--canvas-dot-pattern: var(--ill-hairline-soft);
+
+	/* misc */
+	--radius-s: 0;
+	--radius-m: 0;
+	--radius-l: 0;
+	--radius-xl: 0;
+	--indentation-guide-color: var(--ill-hairline-soft);
+	--indentation-guide-color-active: var(--ill-hairline);
+	--collapse-icon-color: var(--ill-ink-faint);
+	--collapse-icon-color-collapsed: var(--ill-rubric);
+	--vault-name-color: var(--ill-gold-mid);
+	--highlight-mix-blend-mode: multiply;
+}
+
+/* ============================================================
+   CANDLELIT RENDITION - dark mode base (Kells by lamplight)
+   ============================================================ */
+
+body.theme-dark {
+	color-scheme: dark;
+
+	--highlight-mix-blend-mode: screen;
+	--ill-page: #211910;
+	--ill-page-deep: #1a1309;
+	--ill-page-raised: #2a2013;
+	--ill-page-shade: #140e07;
+	--ill-desk: #120c06;
+	--ill-desk-raised: #1d1409;
+	--ill-desk-line: #3a2c17;
+	--ill-desk-text: #9d8a5e;
+	--ill-ink: #e3d2a9;
+	--ill-ink-soft: #b59c6f;
+	--ill-ink-faint: #806c4c;
+	--ill-rubric: #d0603a;
+	--ill-versal-a: #d0603a;
+	--ill-versal-b: #67a186;
+	--ill-accent: #67a186;
+	--ill-link: #7e9fc9;
+	--ill-link-ext: #ab84b5;
+	--ill-error: #cd584a;
+	--ill-warning: #c99b3c;
+	--ill-success: #8aa860;
+	--ill-gold-hi: #f4dc96;
+	--ill-gold-mid: #d7a844;
+	--ill-gold-lo: #a37b23;
+	--ill-gold-edge: #38290f;
+	--ill-highlight: rgb(215 168 68 / 20%);
+	--ill-selection: rgb(103 161 134 / 22%);
+	--ill-hover-wash: rgb(227 210 169 / 7%);
+	--ill-active-wash: rgb(227 210 169 / 12%);
+	--ill-hairline: rgb(227 210 169 / 22%);
+	--ill-hairline-soft: rgb(227 210 169 / 12%);
+	--ill-ruling-color: #c9a468;
+	--ill-shadow-page: rgb(0 0 0 / 62%);
+	--accent-h: 155;
+	--accent-s: 25%;
+	--accent-l: 52%;
+}
