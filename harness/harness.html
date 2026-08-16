@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Illuminatio harness</title>
+<!--STYLES-->
+<style>
+.ill-harness-bar { position: fixed; top: 6px; right: 6px; z-index: 999; display: flex; gap: 6px; font: 12px sans-serif; }
+.ill-harness-bar select, .ill-harness-bar button { font: 12px sans-serif; padding: 2px 6px; }
+</style>
+</head>
+<body class="theme-light illuminatio-kells">
+<div class="ill-harness-bar">
+	<select id="ms">
+		<option value="illuminatio-kells">Kells</option>
+		<option value="illuminatio-lindisfarne">Lindisfarne</option>
+		<option value="illuminatio-winchester">Winchester</option>
+		<option value="illuminatio-riches">Riches Heures</option>
+		<option value="illuminatio-ellesmere">Ellesmere</option>
+		<option value="illuminatio-aureus">Aureus</option>
+		<option value="illuminatio-gigas">Gigas</option>
+		<option value="illuminatio-argenteus">Argenteus</option>
+	</select>
+	<button id="mode">light/dark</button>
+</div>
+<div class="app-container">
+<div class="horizontal-main-container">
+<div class="workspace">
+	<div class="workspace-ribbon side-dock-ribbon mod-left">
+		<div class="side-dock-ribbon-action"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+		<div class="side-dock-ribbon-action"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
+		<div class="side-dock-ribbon-action"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></div>
+	</div>
+	<div class="workspace-split mod-horizontal mod-left-split">
+		<div class="nav-header">
+			<div class="clickable-icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+			<div class="clickable-icon"><svg viewBox="0 0 24 24"><path d="M3 7h18M6 12h12M9 17h6"/></svg></div>
+		</div>
+		<div class="nav-files-container">
+			<div class="tree-item nav-folder">
+				<div class="tree-item-self nav-folder-title"><div class="tree-item-icon"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>Scriptorium</div>
+				<div class="tree-item-children">
+					<div class="tree-item nav-file"><div class="tree-item-self nav-file-title is-active">Of the Making of Books</div></div>
+					<div class="tree-item nav-file"><div class="tree-item-self nav-file-title">On Pigments</div></div>
+					<div class="tree-item nav-file"><div class="tree-item-self nav-file-title">Bestiary Notes</div></div>
+				</div>
+			</div>
+			<div class="tree-item nav-folder">
+				<div class="tree-item-self nav-folder-title"><div class="tree-item-icon"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>Charters</div>
+			</div>
+			<div class="tree-item nav-file"><div class="tree-item-self nav-file-title">Daily folio</div></div>
+		</div>
+		<div class="workspace-sidedock-vault-profile">Illuminatio vault</div>
+	</div>
+	<div class="workspace-split mod-vertical mod-root">
+		<div class="workspace-tabs">
+			<div class="workspace-tab-header-container">
+				<div class="workspace-tab-header is-active"><div class="workspace-tab-header-inner"><span class="workspace-tab-header-inner-title">Of the Making of Books</span></div></div>
+				<div class="workspace-tab-header"><div class="workspace-tab-header-inner"><span class="workspace-tab-header-inner-title">On Pigments</span></div></div>
+			</div>
+			<div class="workspace-leaf">
+				<div class="workspace-leaf-content" data-type="markdown">
+					<div class="view-header">
+						<div class="view-header-title">Of the Making of Books</div>
+						<div class="view-actions">
+							<div class="clickable-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 16L16 6l2 2L8 18l-3 1z"/></svg></div>
+							<div class="clickable-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="12" cy="19" r="1.6"/></svg></div>
+						</div>
+					</div>
+					<div class="view-content">
+						<div class="markdown-reading-view">
+							<div class="markdown-preview-view markdown-rendered">
+								<div class="markdown-preview-sizer markdown-preview-section">
+									<div class="mod-header"><div class="inline-title">Of the Making of Books</div></div>
+									<div class="el-p"><p>In the scriptorium every book began as a beast of the field. The parchmenter took the skin, limed and scraped and stretched it, and what had grazed a Northumbrian hillside became a surface fit to <a class="internal-link">carry the word</a> for a thousand years. The scribe ruled his leaf with a dry point of lead, pricked the margins, and only then dipped his quill in <a class="internal-link">iron-gall ink</a>.</p></div>
+									<div class="el-p"><p>What follows in this note is ordinary work: lists and tables, quotations and asides, the whole furniture of knowledge — set down as the masters of <mark>Kells and Lindisfarne</mark> would have kept them, were their desks fitted with backlinks. An unfinished thought is marked <a class="internal-link is-unresolved">like a missing quire</a>, and outside authorities <a class="external-link">live beyond the walls</a>.</p></div>
+									<div class="el-h2"><h2>Of pigments and where they are got</h2></div>
+									<div class="el-p"><p>The painter's colours were mineral, vegetable and animal at once. Orpiment came from the mountain, woad from the field, kermes from the bodies of insects gathered on Mediterranean oaks. Ultramarine crossed two continents before it touched a page, ground from lapis lazuli mined in Badakhshan, and cost more than the gold it lay beside.</p></div>
+									<div class="el-ul"><ul>
+										<li>Minium, the red lead that gave the <em>miniature</em> its name</li>
+										<li>Orpiment, arsenic's golden sister, never to be licked from the brush</li>
+										<li>Verdigris, scraped green from vinegared copper</li>
+										<li>Woad and imported indigo, the workaday blues</li>
+										<li>Folium, the turnsole purple that shifts with the weather</li>
+									</ul></div>
+									<div class="el-h3"><h3>The day's tasks</h3></div>
+									<div class="el-ul"><ul class="contains-task-list">
+										<li class="task-list-item is-checked" data-task="x"><input type="checkbox" class="task-list-item-checkbox" checked><span>Rule the quire for the Psalter</span></li>
+										<li class="task-list-item is-checked" data-task="x"><input type="checkbox" class="task-list-item-checkbox" checked><span>Grind vermilion for the rubricator</span></li>
+										<li class="task-list-item" data-task=" "><input type="checkbox" class="task-list-item-checkbox"><span>Gild the opening initial of John</span></li>
+										<li class="task-list-item" data-task=" "><input type="checkbox" class="task-list-item-checkbox"><span>Beg the cellarer for better candles #scriptorium <a class="tag" href="#">#pigments</a></span></li>
+									</ul></div>
+									<div class="el-blockquote"><blockquote><p>The book is finished. Let the scribe play. Three fingers write, but the whole body labours. — a colophon left by a tired Irish hand, ninth century</p></blockquote></div>
+									<div class="el-div"><div class="callout" data-callout="note">
+										<div class="callout-title"><div class="callout-icon"><svg viewBox="0 0 24 24"><path d="M12 8v5M12 16.5v.5"/><circle cx="12" cy="12" r="9"/></svg></div><div class="callout-title-inner">Nota bene</div></div>
+										<div class="callout-content"><p>Where a medieval reader wanted attention drawn, he inked a small pointing hand in the margin. The manicule on this panel is doing exactly its ancestral job.</p></div>
+									</div></div>
+									<div class="el-div"><div class="callout" data-callout="warning">
+										<div class="callout-title"><div class="callout-icon"><svg viewBox="0 0 24 24"><path d="M12 3L2 21h20L12 3zM12 10v5M12 18v.5"/></svg></div><div class="callout-title-inner">Warning</div></div>
+										<div class="callout-content"><p>Orpiment and verdigris quarrel. Lay them side by side and both will blacken within the year.</p></div>
+									</div></div>
+									<div class="el-h1"><h1>Liber Secundus</h1></div>
+									<div class="el-p"><p>Every art has its ranks and offices. Below the great incipit stand the lesser dignities of the page, each with its own dress.</p></div>
+									<div class="el-h4"><h4>Of the fourth rank</h4></div>
+									<div class="el-h5"><h5>Of the fifth rank</h5></div>
+									<div class="el-h6"><h6>Of the sixth rank, the least of all</h6></div>
+									<div class="el-h2"><h2>A canon of colours</h2></div>
+									<div class="el-table"><table>
+										<thead><tr><th>Pigment</th><th>Source</th><th>Hue</th><th>Cost</th></tr></thead>
+										<tbody>
+											<tr><td>Ultramarine</td><td>Lapis lazuli, Badakhshan</td><td>Deep blue</td><td>Ruinous</td></tr>
+											<tr><td>Vermilion</td><td>Cinnabar, or alchemy</td><td>Scarlet</td><td>Dear</td></tr>
+											<tr><td>Orpiment</td><td>Arsenic sulphide</td><td>Gold-yellow</td><td>Moderate</td></tr>
+											<tr><td>Verdigris</td><td>Copper and vinegar</td><td>Blue-green</td><td>Cheap</td></tr>
+											<tr><td>Iron gall</td><td>Oak galls and vitriol</td><td>Brown-black</td><td>Everyday</td></tr>
+										</tbody>
+									</table></div>
+									<div class="el-h3"><h3>A recipe, as the workshop kept it</h3></div>
+									<div class="el-pre"><pre><code><span class="token comment"># De clarea - of glair, for laying gold</span>
+<span class="token keyword">take</span> the white of an egg <span class="token function">beaten</span> to snow
+<span class="token keyword">let</span> it stand a night <span class="token comment"># until it runs clear</span>
+<span class="token keyword">temper</span> with it thy <span class="token string">"armenian bole"</span>
+lay on <span class="token number">3</span> coats, breathe warm, and burnish</code></pre></div>
+									<div class="el-p"><p>Inline terms such as <code>minium</code> and <code>lapis</code> sit in small schema panels, and a horizontal rule below closes the section with a line-filler, as a scribe would fill the last of a ruled line.</p><p>The gathering ends with its mark.<sup class="footnote-ref"><a class="footnote-link" href="#">[1]</a></sup></p></div>
+									<div class="el-ol"><ol>
+										<li>First gather the skins</li>
+										<li>Then rule the leaves</li>
+										<li>Only then cut the quills</li>
+									</ol></div>
+									<div class="el-hr"><hr></div>
+									<div class="el-div"><div class="footnotes"><ol><li>Quire marks and catchwords kept the binder from shuffling a year's work into nonsense.</li></ol></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class="status-bar"><span>12 of 88 folios</span><span>1,204 words</span></div>
+</div>
+<script>
+const ms = document.getElementById("ms");
+const params = new URLSearchParams(location.search);
+function setMs(v) {
+	document.body.className = document.body.className.replace(/illuminatio-\w+/g, "");
+	document.body.classList.add(v);
+	ms.value = v;
+}
+if (params.get("bar") === "0") document.querySelector(".ill-harness-bar").style.display = "none";
+if (params.get("ms")) setMs("illuminatio-" + params.get("ms"));
+if (params.get("mode") === "dark") { document.body.classList.remove("theme-light"); document.body.classList.add("theme-dark"); }
+ms.addEventListener("change", () => setMs(ms.value));
+document.getElementById("mode").addEventListener("click", () => {
+	document.body.classList.toggle("theme-light");
+	document.body.classList.toggle("theme-dark");
+});
+</script>
+</body>
+</html>
